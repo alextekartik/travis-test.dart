@@ -1,0 +1,4 @@
+name: tekartik_travis_test
+dev_dependencies:
+  test: any
+  dev_test: any
