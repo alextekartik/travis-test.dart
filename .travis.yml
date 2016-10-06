@@ -1,9 +1,18 @@
 language: dart
-with_content_shell: true
+sudo: required
+dist: trusty
 dart:
   - stable
-sudo: false
+  - dev
 before_install:
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
-script: ./tool/travis.sh
+ - export CHROME_BIN=/usr/bin/google-chrome
+ - export DISPLAY=:99.0
+ - sh -e /etc/init.d/xvfb start
+ - sudo apt-get update
+ - sudo apt-get install -y libappindicator1 fonts-liberation
+ - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+ - sudo dpkg -i google-chrome*.deb
+
+script:
+ - "t=0; until (xdpyinfo -display :99 &> /dev/null || test $t -gt 10); do sleep 1; let t=$t+1; done"
+ - ./tool/travis.sh
