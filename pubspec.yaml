@@ -2,7 +2,7 @@ name: tekartik_travis_test
 version: 0.1.0
 
 environment:
-  sdk: '>=2.0.0-dev.54 <3.0.0'
+  sdk: '>=2.5.0-dev <3.0.0'
 
 dev_dependencies:
   test: any
