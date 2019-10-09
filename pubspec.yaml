@@ -1,7 +1,8 @@
 name: tekartik_travis_test
-version: 0.0.1
+version: 0.1.0
+
 environment:
-  sdk: '>=1.24.0 <2.0.0'
+  sdk: '>=2.5.0-dev <3.0.0'
 
 dev_dependencies:
   test: any
@@ -9,5 +10,5 @@ dev_dependencies:
   chrome_travis:
     git:
       url: git://github.com/tekartik/chrome_travis.dart
-      ref: dart1
+      ref: dart2
     version: '>=0.1.3'
